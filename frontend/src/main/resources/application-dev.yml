@@ -1,0 +1,30 @@
+server: 
+  port: 8093
+
+spring:
+  application:
+    name: frontend-dev
+
+#Keycloak Configuration
+keycloak: 
+  auth-server-url: #{keycloak host} # ex) http://localhost:8080/auth
+  realm: #{realm name}
+  resource: #{client id}
+  credentials: 
+    secret: #{client secret}
+
+logging:
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: ${user.dir}/logs/frontend-dev.log
+  file.max-size: 100MB
+  file.max-history: 999999999
+  level:
+    org.springframework: INFO
+    org.springframework.web : DEBUG
+    com.daumsoft.frontend: DEBUG
+    jdbc: ERROR
+    jdbc.sqlonly: INFO
+    org.hibernate.sql: INFO
+    com.zaxxer.hikari.pool: INFO

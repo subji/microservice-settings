@@ -1,0 +1,36 @@
+server:
+  port: 8000
+    
+eureka:
+  instance:
+    prefer-ip-address: true   #
+    instance-id: ${spring.application.name}:${random.value}
+
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
+    gateway:
+      routes:
+        - id: test-service
+          uri: lb://service
+          predicates:
+            - Path=/users/**
+        - id: analysis-service
+          uri: lb://analysis
+          predicates:
+            - Path=/analysis/**
+
+service:
+  ribbon:
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule
+    eureka:
+      enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'     

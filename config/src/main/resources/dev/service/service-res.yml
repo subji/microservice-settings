@@ -1,0 +1,7 @@
+server:
+  port: 0
+
+eureka:
+  instance:
+    prefer-ip-address: true   #
+    instance-id: ${spring.application.name}:${random.value}

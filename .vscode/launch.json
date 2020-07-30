@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ConfigApplication<config>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.daumsoft.dataplus.ConfigApplication",
+      "projectName": "config",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-DiscoveryApplication<discovery>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.daumsoft.dataplus.DiscoveryApplication",
+      "projectName": "discovery",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-GatewayApplication<gateway>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.daumsoft.dataplus.GatewayApplication",
+      "projectName": "gateway",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ServiceApplication<service>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "com.daumsoft.dataplus.ServiceApplication",
+      "projectName": "service",
+      "args": ""
+    }
+  ]
+}

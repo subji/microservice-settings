@@ -1,0 +1,10 @@
+server:
+  shutdown: graceful
+
+spring:
+  profiles:
+    active: dev
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/views/

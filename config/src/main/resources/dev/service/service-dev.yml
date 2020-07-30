@@ -1,0 +1,37 @@
+server:
+  port: 0
+  shutdown: graceful
+
+eureka:
+  instance:
+    prefer-ip-address: true   #
+    instance-id: ${spring.application.name}:${random.value}
+
+# Can be set to false to disable security during local development
+rest: 
+  security: 
+    enabled: true
+    api-matcher: /users/**
+    cors.allowed-origins: '*'
+    cors.allowed-headers: '*'
+    cors.allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
+    cors.max-age: 3600
+
+keycloak:
+  realm: daumsoft-realm
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: sometrend-dev
+  credentials:
+    secret: 68a3acf3-f672-46e5-977c-17034bd43e97
+  use-resource-role-mappings: true
+  bearer-only: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+        
+        

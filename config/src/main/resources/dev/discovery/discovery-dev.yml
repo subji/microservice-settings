@@ -1,0 +1,15 @@
+server:
+  port: 8761
+    
+eureka:
+  client:
+    register-with-eureka: false    # 
+    fetch-registry: false   # 서버에서 등록된 설정 가지고 오는지
+  server:
+    response-cache-update-interval-ms : 1000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
